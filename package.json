@@ -7,7 +7,6 @@
     "url": "git+https://github.com/acrontum/eslint-config.git"
   },
   "scripts": {
-    "version": "npm verison --no-commit-hooks --no-git-tag-version",
     "docs": "npm run docs-readme && npm run docs-changelog",
     "docs-readme": "npx doctoc --github readme.md && sed -i 's/%5C_/_/g' readme.md",
     "docs-changelog": "npx auto-changelog --output changelog.md --commit-limit false --sort-commits date --hide-empty-releases --ignore-commit-pattern 'release' --breaking-pattern 'breaking change: '"
