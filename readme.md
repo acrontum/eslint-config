@@ -1,6 +1,8 @@
 # ACR eslint config
 
-ACR recommended typescript + prettier + eslint rules based off a strict ruleset.
+ACR recommended typescript + prettier + eslint rules based off a strict ruleset, specifically:
+- [plugin:prettier/recommended](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/strict-type-checked.ts).
+- [plugin:@typescript-eslint/strict-type-checked](https://github.com/prettier/eslint-plugin-prettier/blob/master/recommended.js)
 
 <!--
 to regen:
