@@ -34,6 +34,11 @@
     "eslint-plugin-prettier": ">= 5",
     "prettier": ">= 3"
   },
+  "peerDependenciesMeta": {
+    "@eslint/eslintrc": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "auto-changelog": "^2.4.0"
   }
