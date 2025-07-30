@@ -1,6 +1,6 @@
 {
   "name": "@acrontum/eslint-config",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "recommended.mjs",
   "repository": {
     "type": "git",
