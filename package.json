@@ -20,22 +20,23 @@
   "license": "ISC",
   "description": "",
   "files": [
-    "legacy.js",
-    "recommended.mjs"
+    "recommended.mjs",
+    "angular-recommended.mjs"
   ],
+  "overrides": {
+    "minimatch": ">=5.0.7"
+  },
   "peerDependencies": {
-    "@eslint/eslintrc": ">= 3.1.0",
-    "@eslint/js": ">= 9.5.0",
-    "@typescript-eslint/eslint-plugin": ">= 7",
-    "@typescript-eslint/parser": ">= 7",
-    "eslint": ">= 7",
+    "angular-eslint": "22.1.0",
+    "eslint": ">= 9",
     "eslint-config-prettier": ">= 7",
-    "eslint-plugin-no-only-tests": ">= 3",
     "eslint-plugin-prettier": ">= 5",
-    "prettier": ">= 3"
+    "globals": "^14.0.0",
+    "prettier": ">= 3",
+    "typescript-eslint": "^8"
   },
   "peerDependenciesMeta": {
-    "@eslint/eslintrc": {
+    "angular-eslint": {
       "optional": true
     }
   },

@@ -1,42 +1,32 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import tsParser from '@typescript-eslint/parser';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import { dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import tseslint from 'typescript-eslint';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
-
-export default [
-  ...compat.extends('plugin:prettier/recommended', 'plugin:@typescript-eslint/strict-type-checked'),
-  {
-    languageOptions: {
-      globals: {
-        ...globals.node,
+export default defineConfig({
+  files: ['**/*.ts'],
+  languageOptions: { globals: globals.node, parserOptions: { projectService: true, createDefaultProgram: true } },
+  extends: [prettierRecommended, tseslint.configs.strictTypeChecked],
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'error',
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
+    '@typescript-eslint/no-extraneous-class': ['error', { allowWithDecorator: true }],
+    '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true, allowBoolean: true, allowNullish: true }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
+        caughtErrors: 'all',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
       },
-      parser: tsParser,
-      ecmaVersion: 2020,
-      sourceType: 'module',
-      parserOptions: {
-        project: 'tsconfig.json',
-        tsconfigRootDir: process.env.npm_package_json ? dirname(process.env.npm_package_json) : process.cwd()
-      },
-    },
-    rules: {
-      '@typescript-eslint/explicit-module-boundary-types': 'error',
-      '@typescript-eslint/explicit-function-return-type': 'error',
-      'no-console': [
-        'error',
-        {
-          allow: ['warn', 'error', 'info', 'trace'],
-        },
-      ],
-    },
+    ],
+    'prettier/prettier': [
+      'error',
+      { bracketSpacing: true, endOfLine: 'auto', semi: true, printWidth: 130, singleQuote: true, quoteProps: 'consistent' },
+    ],
+    'no-console': ['error', { allow: ['warn', 'error', 'info', 'trace'] }],
+    'require-await': 'error',
   },
-];
+});
