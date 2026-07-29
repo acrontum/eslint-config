@@ -4,7 +4,7 @@ ACR recommended typescript + prettier + eslint rules based off a strict ruleset,
 - [plugin:prettier/recommended](https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/src/configs/strict-type-checked.ts).
 - [plugin:@typescript-eslint/strict-type-checked](https://github.com/prettier/eslint-plugin-prettier/blob/master/recommended.js)
 
-Because eslint is [annoying to configure](https://github.com/eslint/eslint/discussions/20500), this pacakge aims to provide some sane defaults without all the fiddly bits.
+Because eslint is [annoying to configure](https://github.com/eslint/eslint/discussions/20500), this package aims to provide some sane defaults without all the fiddly bits.
 
 <!-- npx doctoc --github readme.md -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -44,7 +44,7 @@ export default defineConfig(
 );
 ```
 
-For angular (also `npm i -D angular-eslint`:
+For angular (also `npm i -D angular-eslint`):
 ```ts
 // eslint.config.mjs
 import acrLint from '@acrontum/eslint-config/angular-recommended.mjs';
