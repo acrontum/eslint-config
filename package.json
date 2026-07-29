@@ -27,7 +27,7 @@
     "minimatch": ">=5.0.7"
   },
   "peerDependencies": {
-    "angular-eslint": "22.1.0",
+    "angular-eslint": ">= 20",
     "eslint": ">= 9",
     "eslint-config-prettier": ">= 7",
     "eslint-plugin-prettier": ">= 5",
