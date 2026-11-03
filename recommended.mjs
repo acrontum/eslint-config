@@ -4,7 +4,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default defineConfig({
-  files: ['**/*.ts'],
+  files: ['**/*.ts', '**/*.mts'],
   languageOptions: { globals: globals.node, parserOptions: { projectService: true, createDefaultProgram: true } },
   extends: [prettierRecommended, tseslint.configs.strictTypeChecked],
   rules: {
